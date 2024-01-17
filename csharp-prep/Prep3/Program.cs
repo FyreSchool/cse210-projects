@@ -3,9 +3,7 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {   
-        //Generate a random number to use as magic number
-        
+    {          
 
         //Ask user to start guessing the magic number
         Console.WriteLine("Try to guess the magic number.  ");
@@ -19,7 +17,8 @@ class Program
             //Generate a random number to use as magic number
             Random randomGenerator = new Random();
             int magicNumber = randomGenerator.Next(1, 100);
-        //Reset guess
+            
+            //Reset guess
             guess = -1;
             counter= 1;
 
