@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         {
+        Console.Clear();
         Console.WriteLine("Menu:");
         Console.WriteLine("   1. Start breathing activity");
         Console.WriteLine("   2. Start reflection activity");
@@ -16,17 +17,23 @@ class Program
 
         switch (choice)
         {
-            case "1":
+            case "1": 
+                 
+                Breathing breathActivity = new Breathing();
+                breathActivity.BreathActivity();
                 
-                // Add code for Option 1 functionality
                 break;
             case "2":
                 
-                // Add code for Option 2 functionality
+                Reflection reflectionActvity = new Reflection();
+                reflectionActvity.ReflectionActivity();
+                
                 break;
             case "3":
                 
-                // Add code for Option 3 functionality
+                Listing listingActivity = new Listing();
+                listingActivity.ListingActivity();
+
                 break;
             case "4":
                 Console.WriteLine("Exiting...");
@@ -36,8 +43,10 @@ class Program
                 break;
         }
 
-        // Repeat the menu until the user chooses to exit
+        
         Main(args);
     }
     }
+
+    
 }
