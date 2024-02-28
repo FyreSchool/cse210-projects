@@ -7,10 +7,9 @@ public class Breathing : Activity
     {
        
     }
-    
-
     public void BreathActivity()
     {   
+        //breathing activity start
         ActivityStart();
         
         for (int i = duration / 10; i > -1; i--)
@@ -29,11 +28,5 @@ public class Breathing : Activity
         GetFinished(duration, GetActivityName());
         Console.Clear();
 
-
     }
-  
-
-    
-
-
 }

@@ -15,6 +15,7 @@ public class Activity
     }
     public void Animate()
     {
+        //creates a loading animation
         List<string> animation = new List<string>();
         animation.Add("|");
         animation.Add("/");
@@ -33,35 +34,34 @@ public class Activity
         }
 
     }
-
     public string GetActivityName()
     {
         return activityName;
     }
     public void GetReady()
     {
+        //tells user to get ready and display an animation
         Console.WriteLine("Get Ready... ");
         Animate();
     }
     public void GetCountDown()
     {
-         for (int i = 5; i > 0; i--)
+        //prints a countdown from 5 to 1
+        for (int i = 5; i > 0; i--)
             {
                 Console.Write(i);
                 Thread.Sleep(1000);
                 Console.Write("\b \b");
             }
     }
-
-
     public int GetDuration()
     {
+        //user inputs how long they want to do the activity
         Console.Write("How long, in Seconds, would you like for your session to be? ");
         int userDuration = int.Parse(Console.ReadLine());
         duration = userDuration;
         return duration;
     }
-
     public string GetStartingMessage()
     {
         return startingMessage;
@@ -70,22 +70,25 @@ public class Activity
     {
         return activityDescription;
     }
-
     public void GetFinished(int duration,string activityName)
     {
+        //tells user they have completed activity
         Console.WriteLine("Well Done");
         Animate();
-        Console.WriteLine( "You have completed " + duration + " of the " + activityName + " activity.");
+        Console.WriteLine( "You have completed " + duration + " seconds of the " + activityName + " activity.");
+        Animate();
     }
 
     public void ActivityStart()
     {
+        //base start for all activity
         Console.Clear();
         Console.WriteLine(GetStartingMessage());
         Console.WriteLine();
         Console.WriteLine(GetActivityDescription());
         Console.WriteLine();
         GetDuration();
+        Console.Clear();
         GetReady();
         Console.Clear();
     }

@@ -8,19 +8,19 @@ public class Reflection : Activity
     }
     public void ReflectionActivity()
     {
-        
-
+        //list of promtps
         List<string> prompts = new List<string>();
         prompts.Add("Think of a time when you stood up for someone else. ");
         prompts.Add("Think of a time when you did something really difficult.");
         prompts.Add("Think of a time when you helped someone in need.");
         prompts.Add("Think of a time when you did something truly selfless.");
 
+        //gets a random prompt from list
         Random randomprompt = new Random();
         int randomIndex = randomprompt.Next(0, prompts.Count);
-
         string randomPrompt = prompts[randomIndex];
     
+        //reflection activity start
         ActivityStart();
         Console.WriteLine("Consider the following prompt\n");
         Console.WriteLine("---" + randomPrompt + "---\n");
@@ -34,17 +34,16 @@ public class Reflection : Activity
         Console.WriteLine();
         GetFinished(duration, GetActivityName());
 
-
-
-
     }
 
     public void Question()
     {
+        //sets time for the timer
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(duration);
         DateTime currentTime = DateTime.Now;
 
+        //create list of questions
         List<string> questions = new List<string>();
         questions.Add("Why was this experience meaningful to you?");
         questions.Add("Have you ever done anything like this before?");
@@ -56,15 +55,20 @@ public class Reflection : Activity
         questions.Add("What did you learn about yourself through this experience?");
         questions.Add("How can you keep this experience in mind in the future?");
 
+        //runs for only a set amount of time
         while (currentTime < futureTime)
         {   
+            //gets a random question
             Random random = new Random();
             int randomIndex = random.Next(0, questions.Count);
-
             string randomQuestion = questions[randomIndex];
+
+            //prints out the random question with an animation
             Console.Write("> " + randomQuestion);
             Animate();
             Console.WriteLine();
+
+            //updates time in loop
             currentTime = DateTime.Now;
         }
 
