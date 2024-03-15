@@ -6,7 +6,7 @@ public class Goal
     protected string goalName;
     protected string goalDescription;
     protected int goalPoints;
-    protected int totalPoints;
+    public static int totalPoints;
 
     public static List<string> goals = new List<string>();
     public static List<int> points = new List<int>();
@@ -41,15 +41,19 @@ public class Goal
     public void DisplayGoal()
     {
         int count = 0;
+        Console.WriteLine("");
         Console.WriteLine("The goals are:");
-        foreach (var (goal,descript) in goals.Zip(goaldescript))
+        for (int i = 0; i < goals.Count; i++)
         {
+
             count += 1;
-            Console.WriteLine($"{count}. [] {goal} ({descript})");
-            Console.WriteLine("");
-            Console.WriteLine($"You have {totalPoints} points. ");
-            Console.WriteLine("");
+            string checkmark = this is EternalGoal ? "[]" : points[i] == 0 ? "[✓]" : "[]";
+            Console.WriteLine($"{count}. {checkmark} {goals[i]} ({goaldescript[i]})");
+            
         }
+        Console.WriteLine("");
+        Console.WriteLine($"You have {totalPoints} points. ");
+        Console.WriteLine("");
     }
 
     public void RecordEvent()
@@ -59,22 +63,30 @@ public class Goal
         foreach (var goal in goals)
         {
             count += 1;
-            Console.WriteLine($"{count}. [] {goal})");
+            Console.WriteLine($"    {count}. {goal}");
         }
         int goalchoice;
         Console.Write("What goals did you achoplish today?");
         int.TryParse(Console.ReadLine(), out goalchoice);
+        Console.WriteLine("");
+        
+        int totalPointsAdd = 0;
 
-        foreach (var point in points)
+        for (int i = 0; i < goals.Count; i++)
         {
-            if (point == goalchoice)
+            if (i == goalchoice - 1)
             {
-                totalPoints += point;
-                Console.WriteLine($"Congratulations! You have earned {point} points! ");
-
-                Console.WriteLine($"You have {totalPoints} points. ");
+                totalPointsAdd += points[i];
+                
+                Console.WriteLine($"Congratulations! You have earned {points[i]} points! ");
+                points[i] = 0;
+                break;
             }
+
         }
+        totalPoints += totalPointsAdd;
+        Console.WriteLine("");
+        Console.WriteLine($"You have {totalPoints} points. ");
         
     }
 

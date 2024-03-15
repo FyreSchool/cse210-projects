@@ -37,7 +37,7 @@ class Program
                         break;
 
                     case "2":
-                        
+                        EternalGoal eternal = new EternalGoal();
                         break;
 
                     case "3":

@@ -6,4 +6,9 @@ public class EternalGoal : Goal
     {
         CreateGoal();
     }
+    public override void RecordEvent()
+    {
+        
+    }
+    
 }
