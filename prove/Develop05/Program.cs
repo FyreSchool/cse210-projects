@@ -1,11 +1,12 @@
 using System;
 using System.Runtime.CompilerServices;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        
+        AllGoals allGoals = new AllGoals();
         Console.WriteLine("Menu:");
         Console.WriteLine("   1. Create New Goal");
         Console.WriteLine("   2. List Goals");
@@ -22,58 +23,29 @@ class Program
            
             case "1": 
                  
-                Console.WriteLine("The Types Of Goals Are:");
-                Console.WriteLine("   1. Simple Goal");
-                Console.WriteLine("   2. Eternal Goal");
-                Console.WriteLine("   3. Checklist Goal");  
-                Console.Write("What type of goal would you like to create: ");
-                string goalChoice = Console.ReadLine();
-                
-                switch (goalChoice)
-                {
-                    case "1":
-
-                        SimpleGoal simple = new SimpleGoal();
-                        break;
-
-                    case "2":
-                        EternalGoal eternal = new EternalGoal();
-                        break;
-
-                    case "3":
-
-                        break;
-
-                    default:
-
-                        Console.WriteLine("Invalid goal type choice!");
-                        break;
-
-                }
+                allGoals.MakeGoal();
                 break;
             
             case "2":
 
-                Goal display = new Goal();
-                display.DisplayGoal();
-                
+                allGoals.Display();
                 break;
             
             case "3":
                 
+                allGoals.WriteFile();
                 
                 break;
 
             case "4":
 
+                allGoals.LoadFile();
                 break;
 
             case "5":
 
-                Goal record = new Goal();
-                record.RecordEvent();
+                allGoals.GoalProgress();
                 break;
-            //exits program
             case "6":
                 Console.WriteLine("Exiting...");
                 return;

@@ -2,13 +2,19 @@ using System;
 
 public class EternalGoal : Goal
 {
-    public EternalGoal()
+    private int eternalPoints;
+    public EternalGoal(string name, string description, int eternalPoints, bool complete) : base("Eternal", name, description, eternalPoints, complete)
     {
-        CreateGoal();
+        this.eternalPoints = eternalPoints;
     }
-    public override void RecordEvent()
+    public override int Record()
     {
-        
+        return AddPoints(eternalPoints);
+    }
+    public override bool IsCompleted()
+    {
+        return complete;
     }
     
+
 }

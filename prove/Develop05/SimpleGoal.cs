@@ -2,8 +2,20 @@ using System;
 
 public class SimpleGoal : Goal
 {
-    public SimpleGoal()
+    private int simplePoints;
+    public SimpleGoal(string name, string description, int simplePoints, bool complete) : base("simple",name,description,simplePoints,complete)
     {
-        CreateGoal();
+       this.simplePoints = simplePoints;
     }
+    public override bool IsCompleted()
+    {
+       return complete; 
+    }
+    public override int Record()
+    {
+        Completed(true);
+        return AddPoints(points);
+
+    }
+   
 }
