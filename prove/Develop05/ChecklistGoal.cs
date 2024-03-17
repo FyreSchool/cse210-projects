@@ -8,7 +8,7 @@ public class ChecklistGoal : Goal
     public int goalValue;
     public int bonusCompletions;
 
-    public ChecklistGoal(string name, string description, int goalPoints, int bonusPoints, int bonusCompletions,bool complete,int timesComplete) : base("Checklist", name, description, goalPoints, bonusPoints, bonusCompletions, complete)
+    public ChecklistGoal(string name, string description, int basePoints, int bonusPoints, int bonusCompletions,bool complete,int timesComplete) : base("Checklist", name, description, basePoints, bonusPoints, bonusCompletions, complete)
     {
         this.basePoints = basePoints;
         this.bonusPoints = bonusPoints;

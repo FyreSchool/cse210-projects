@@ -4,14 +4,13 @@ using System.Collections.Generic;
 
 public class AllGoals
 {
-    public int totalPoints;
-    
-    public List<Goal> goalList;
+    public int totalPoints; 
+    public List<Goal> goalList = new List<Goal>();
     public int earnedPoints;
 
     public AllGoals()
     {
-        goalList = new List<Goal>();
+        //goalList = new List<Goal>();
         totalPoints = 0;  
         earnedPoints = 0;
 
@@ -37,9 +36,8 @@ public class AllGoals
             switch(goalChoice)
             {
                 case "1":
-              
+
                     goalList.Add(new SimpleGoal(name, description, points, false));
-                   
                     break;
 
                 case "2":
@@ -74,8 +72,9 @@ public class AllGoals
     public void Display()
     {
         int i = 0;
+        
         foreach (Goal goal in goalList)
-        {
+        {            
             Console.Write($"{i += 1}. ");
             if (goal.IsCompleted()) 
             {
@@ -85,7 +84,7 @@ public class AllGoals
             {
                 Console.Write("[] ");
             }
-               Console.Write($"{goal.GetName()} ({goal.GetDescription()})");
+            Console.Write($"{goal.GetName()} ({goal.GetDescription()})");
             if (goal is ChecklistGoal checklistGoal) 
             {
                 Console.Write($" --- Currently completed: {checklistGoal.GetTimesComplete()}/{checklistGoal.GetGoalValue()}");
@@ -205,6 +204,8 @@ public class AllGoals
             }
         }
     }
+    
+}
    
 
-}
+
