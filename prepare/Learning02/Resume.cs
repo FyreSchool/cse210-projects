@@ -2,7 +2,7 @@ using System;
 
 public class Resume
 {
-    public string _myName;
+    public string _myName; 
 
     public List<Job> _jobs = new List<Job>();
     
