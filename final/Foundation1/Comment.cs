@@ -7,7 +7,7 @@ public class Comment
 
     public void DisplayComment()
     {
-        Console.WriteLine($"{userName} \n \n  '{comment}'");
+        Console.WriteLine($"{userName} \n  '{comment}'\n");
     }
 
 }

@@ -3,27 +3,30 @@ using System.Threading.Tasks.Dataflow;
 
 public class Video
 {
-    public string creator;
+    public string creator; 
     public string title;
     public string length;
 
     public List<Comment> comments = new List<Comment>();
-    public List<Video> videos = new List<Video>();
+    
 
 
     public void DisplayVideo()
-    {
+    { 
+        Console.WriteLine("-----------------------------------------------------------------");
+        Console.WriteLine($"{title}, {length}, created by {creator}");
+        Console.WriteLine("-----------------------------------------------------------------\n");
+        int commentCount = comments.Count();
+        Console.WriteLine($"Comments ({commentCount}):");
         
-        foreach (Video video in videos)
-        {
 
-            Console.WriteLine($"{title}, {length}, created by {creator}");
-
-            foreach(Comment comment in comments)
-            {
-                comment.DisplayComment();
-            }
+        foreach(Comment comment in comments)
+        { 
+            
+            comment.DisplayComment();
+            
         }
+        
     }
     
 
