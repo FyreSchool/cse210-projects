@@ -17,7 +17,7 @@ public class Fractions
         bottomFraction = 1;
     }
 
-    public Fractions(int top, int bottom)
+    public Fractions(int top, int bottom) 
     {
         topFraction = top;
         bottomFraction = bottom;
