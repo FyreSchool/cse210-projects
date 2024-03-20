@@ -4,6 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation4 World!");
+        Running run1 = new Running("05 Mar 2024", 45, 5);
+        Biking bike1 = new Biking("07 Mar 2024", 60, 15);
+        Swimming swim1 = new Swimming("09 Mar 2024", 30,25);
+
+        run1.GetSummary();
+        Console.WriteLine();
+        bike1.GetSummary();
+        Console.WriteLine();
+        swim1.GetSummary();
+
     }
 }
