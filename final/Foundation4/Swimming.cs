@@ -2,19 +2,13 @@ using System;
 using System.Xml;
 
 public class Swimming : Activity
-{
-    private double distance;
+{ 
+
+    public Swimming(string date, double length, double distance) : base(date,length,distance)
+    {
     
-
-    public Swimming(string date, double length, double distance) : base(date,length)
-    {
-        this.distance = distance;
     }
-
-    public override double Distance()
-    {
-        return distance;
-    }
+  
     public override double Pace()
     {
         double pace = length / distance;

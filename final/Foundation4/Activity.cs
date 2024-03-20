@@ -4,11 +4,13 @@ public abstract class Activity
 {
     protected string date;
     protected double length;
+    protected double distance;
     
-    public Activity(string date, double length)
+    public Activity(string date, double length, double distance)
     {
         this.date = date;
         this.length = length;
+        this.distance = distance;
     }
     public string GetDate()
     {
@@ -20,7 +22,7 @@ public abstract class Activity
         return length;
     }
 
-    public abstract double Distance();
+    
     public abstract double Speed();
     public abstract double Pace();
     public abstract void GetSummary();

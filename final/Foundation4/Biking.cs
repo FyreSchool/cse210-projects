@@ -1,18 +1,14 @@
 using System;
 
 public class Biking : Activity
-{
-    private double distance;
+{ 
 
-    public Biking(string date, double length, double distance) : base(date,length)
+    public Biking(string date, double length, double distance) : base(date,length,distance)
     {
-        this.distance = distance;
+        
     }
 
-    public override double Distance()
-    {
-        return distance;
-    }
+
     public override double Pace()
     {
         double pace = length / distance;

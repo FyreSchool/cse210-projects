@@ -2,17 +2,12 @@ using System;
 
 public class Running : Activity
 {
-    private double distance;
 
-    public Running(string date, double length, double distance) : base(date,length)
+    public Running(string date, double length, double distance) : base(date,length,distance)
     {
-        this.distance = distance;
+        
     }
 
-    public override double Distance()
-    {
-        return distance;
-    }
     public override double Pace()
     {
         double pace = length / distance;
